@@ -1,7 +1,7 @@
 package datos;
 
 import static datos.Conexion.*;
-import dominio.Persona;
+import dominio.PersonaDTO;
 import dominio.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

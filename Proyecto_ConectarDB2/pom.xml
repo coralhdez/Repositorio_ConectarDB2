@@ -18,5 +18,5 @@
             <version>8.0.13</version>
         </dependency>
     </dependencies>
-        
+    <name>Proyecto_ConectarDB2_ManejoJDBC</name>
 </project>
