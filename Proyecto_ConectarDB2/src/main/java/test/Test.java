@@ -13,7 +13,7 @@ public class Test {
 
         try {
 
-            conexion = Conexion.getConnection(); //llamo al menoto getConection de la clase Conexion que hemos creado
+            conexion = Conexion.getConnection(); //llamo al método getConection de la clase Conexion que hemos creado
 
             if (conexion.getAutoCommit()) { //quiere decir que autocommit esta a true, y todas las sentencias sql se van a ejecutar, pero quiero hacer varias operaciones en forma de bloque y abrir y cerrrar todas de una al final
                 //por eso la pongo a false para que solo me haga un autocomit general al final

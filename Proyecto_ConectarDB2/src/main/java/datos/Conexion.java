@@ -2,6 +2,8 @@
 package datos;
 
 import java.sql.*;
+import javax.sql.DataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 
 public class Conexion {
@@ -11,9 +13,23 @@ public class Conexion {
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "root"; //en casa al hacerlo co xamp es vacio
     
+    //MÉTODO QUE ME DEVUELVE UN DATASOURCE DE SQL   
+    public static DataSource getDataSource(){
+        BasicDataSource ds = new BasicDataSource();
+        ds.setUrl(JDBC_URL);
+        ds.setUsername(JDBC_URL);
+        ds.setPassword(JDBC_PASSWORD);
+        
+        ds.setInitialSize(5); //cuanta gente se va a conectar , 5 conexiones
+        
+        return ds;
+    }
+    
+    
             //MÉTODO PARA ESTABLECER LA CONEXIÓN
     public static Connection getConnection() throws SQLException{
-        return DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);   
+        //return DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD); 
+        return getDataSource().getConnection();
     }
     
                 //MÉTODOS CLOSE DE LA CONEXIÓN
